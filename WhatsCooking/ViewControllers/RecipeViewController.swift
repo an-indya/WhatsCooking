@@ -94,8 +94,10 @@ extension RecipeViewController: UITableViewDelegate, UITableViewDataSource {
             cell = instructionCell
         } else {
             let ingredientsCell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.ingredientsCell.rawValue, for: indexPath) as! IngredientsTableViewCell
-            ingredientsCell.ingredientTitle.text = ingredients[indexPath.row].name
-            ingredientsCell.measure.text = ingredients[indexPath.row].measure
+            let ingredient = ingredients[indexPath.row]
+            ingredientsCell.ingredientTitle.text = ingredient.name
+            ingredientsCell.measure.text = ingredient.measure
+            ingredientsCell.ingredientImage.image = ingredient.checked ? #imageLiteral(resourceName: "complete") : #imageLiteral(resourceName: "notcomplete")
             cell = ingredientsCell
         }
         return cell
@@ -109,5 +111,16 @@ extension RecipeViewController: UITableViewDelegate, UITableViewDataSource {
         label.text = text
         label.sizeToFit()
         return label.frame.height
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 1 {
+            if let cell = tableView.cellForRow(at: indexPath) as? IngredientsTableViewCell {
+                let ingredient = ingredients[indexPath.row]
+                ingredient.checked = !ingredient.checked
+                IngredientDataManager.updateIngredient(ingredient: ingredient)
+                cell.ingredientImage.image = ingredient.checked ? #imageLiteral(resourceName: "complete") : #imageLiteral(resourceName: "notcomplete")
+            }
+        }
     }
 }

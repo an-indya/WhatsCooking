@@ -9,6 +9,7 @@
         <relationship name="meals" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Meal" inverseName="category" inverseEntity="Meal" syncable="YES"/>
     </entity>
     <entity name="Ingredient" representedClassName=".Ingredient" syncable="YES">
+        <attribute name="checked" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="measure" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="meal" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Meal" inverseName="ingredients" inverseEntity="Meal" syncable="YES"/>
@@ -25,9 +26,9 @@
         <relationship name="ingredients" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Ingredient" inverseName="meal" inverseEntity="Ingredient" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Meal" positionX="-63" positionY="-18" width="128" height="180"/>
         <element name="Area" positionX="-54" positionY="0" width="128" height="75"/>
         <element name="Category" positionX="-36" positionY="18" width="128" height="75"/>
-        <element name="Ingredient" positionX="-18" positionY="63" width="128" height="90"/>
+        <element name="Ingredient" positionX="-18" positionY="63" width="128" height="105"/>
+        <element name="Meal" positionX="-63" positionY="-18" width="128" height="180"/>
     </elements>
 </model>

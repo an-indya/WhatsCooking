@@ -34,7 +34,7 @@ class CollectionViewDataSource<Delegate: CollectionViewDataSourceDelegate>: NSOb
         self.fetchedResultsController = fetchedResultsController
         self.delegate = delegate
         super.init()
-        fetchedResultsController.delegate = self
+        fetchedResultsController.delegate = nil
         try! fetchedResultsController.performFetch()
         collectionView.dataSource = self
         collectionView.reloadData()

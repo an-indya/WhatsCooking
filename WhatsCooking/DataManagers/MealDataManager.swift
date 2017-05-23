@@ -25,7 +25,7 @@ final class MealDataManager {
                         completion(meal)
                     }
                 } else {
-                    completion(nil)
+                    completion(meals.first)
                 }
             } catch {
                 print("Fetching Failed")
@@ -55,6 +55,25 @@ final class MealDataManager {
         }
     }
 
+    class func fetchRandomMeal(completion: (Meal?)-> Void) {
+        if let managedObjectContext = CoreDataManager.shared.managedObjectContext {
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: Meal.entityName)
+            do {
+                if let meals = try managedObjectContext.fetch(fetchRequest) as? [Meal] {
+                    let randomNumber = Int(arc4random_uniform(5) + 1)
+                    if meals.count > randomNumber {
+                        completion(meals[randomNumber])
+                    } else {
+                        completion(meals.first!)
+                    }
+                }
+            } catch {
+                print("Fetching Failed")
+                completion(nil)
+            }
+        }
+    }
+
     class func fetchMeal(with id: String, completion: (Meal?)-> Void) {
         if let managedObjectContext = CoreDataManager.shared.managedObjectContext {
             let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: Meal.entityName)
@@ -71,13 +90,5 @@ final class MealDataManager {
             }
         }
     }
-
-    class func deleteAllMeals () {
-        if let managedObjectContext = CoreDataManager.shared.managedObjectContext {
-            managedObjectContext.performChanges {
-                Meal.deleteAll(context: managedObjectContext)
-            }
-        }
-    }
-
+    
 }

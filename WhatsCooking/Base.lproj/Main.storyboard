@@ -21,6 +21,10 @@
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" red="0.72693924492385786" green="0.063197817279900217" blue="0.10033109158341438" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="tOt-7g-hCB">
+                        <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="P9y-d5-dc9" kind="relationship" relationship="rootViewController" id="w4g-fY-eo8"/>
                     </connections>
@@ -156,6 +160,7 @@
                         <constraints>
                             <constraint firstItem="Ujq-w6-IgN" firstAttribute="top" secondItem="Zdg-DT-la6" secondAttribute="bottom" id="3ey-hR-HRH"/>
                             <constraint firstItem="2bZ-fg-GxM" firstAttribute="top" secondItem="Afj-aS-Cb0" secondAttribute="bottom" constant="17" id="3fG-75-9lY"/>
+                            <constraint firstItem="hJu-Pg-ASJ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="93c-tN-GZf" secondAttribute="bottom" constant="8" id="762-W2-33O"/>
                             <constraint firstItem="03W-V0-aiM" firstAttribute="width" secondItem="r9E-aL-yTL" secondAttribute="width" multiplier="0.5" id="8TW-T7-e5V"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Zdg-DT-la6" secondAttribute="trailing" constant="-16" id="DQj-hr-rat"/>
                             <constraint firstItem="03W-V0-aiM" firstAttribute="baseline" secondItem="851-pw-hFI" secondAttribute="baseline" id="FOZ-Km-UPA"/>
@@ -177,6 +182,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Meals" id="hti-0W-00y">
                         <barButtonItem key="backBarButtonItem" title=" " id="bco-Vc-MiE"/>
+                        <barButtonItem key="rightBarButtonItem" title="Load More" id="CIW-Qq-YZM">
+                            <connections>
+                                <action selector="refreshMeals:" destination="P9y-d5-dc9" id="5Tp-IY-nR2"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="Zdg-DT-la6" id="Wsg-8x-qEo"/>
@@ -236,7 +246,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BDD-OV-dML">
-                                                    <rect key="frame" x="8" y="18" width="37.5" height="18"/>
+                                                    <rect key="frame" x="43" y="18" width="37.5" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -247,16 +257,26 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="notcomplete" translatesAutoresizingMaskIntoConstraints="NO" id="XDk-Nb-HXh">
+                                                    <rect key="frame" x="8" y="14.5" width="25" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="25" id="cey-Ik-y0O"/>
+                                                        <constraint firstAttribute="width" constant="25" id="otx-6x-SXr"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="oJm-bw-xa6" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="BDD-OV-dML" secondAttribute="trailing" constant="20" id="7VO-mw-lKQ"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="oJm-bw-xa6" secondAttribute="trailing" constant="16" id="7kT-Cj-Oaj"/>
                                                 <constraint firstItem="BDD-OV-dML" firstAttribute="centerY" secondItem="aiE-ri-vs8" secondAttribute="centerY" id="FW1-hN-RrY"/>
-                                                <constraint firstItem="BDD-OV-dML" firstAttribute="leading" secondItem="aiE-ri-vs8" secondAttribute="leadingMargin" id="T6V-CN-oBZ"/>
+                                                <constraint firstItem="BDD-OV-dML" firstAttribute="leading" secondItem="XDk-Nb-HXh" secondAttribute="trailing" constant="10" id="V1h-rZ-sJM"/>
+                                                <constraint firstItem="XDk-Nb-HXh" firstAttribute="leading" secondItem="aiE-ri-vs8" secondAttribute="leadingMargin" id="YTu-fT-HG5"/>
+                                                <constraint firstItem="XDk-Nb-HXh" firstAttribute="centerY" secondItem="BDD-OV-dML" secondAttribute="centerY" id="j46-cP-lK0"/>
                                                 <constraint firstItem="oJm-bw-xa6" firstAttribute="centerY" secondItem="BDD-OV-dML" secondAttribute="centerY" id="tmG-Fu-dmi"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="ingredientImage" destination="XDk-Nb-HXh" id="ziu-rO-IY2"/>
                                             <outlet property="ingredientTitle" destination="BDD-OV-dML" id="Wgu-5K-euI"/>
                                             <outlet property="measure" destination="oJm-bw-xa6" id="C7o-M8-aFr"/>
                                         </connections>
@@ -312,6 +332,7 @@
     </scenes>
     <resources>
         <image name="dinner-meal-table-wine" width="2736" height="1824"/>
+        <image name="notcomplete" width="56" height="56"/>
         <image name="pexels-photo-265393" width="1920" height="1280"/>
     </resources>
 </document>

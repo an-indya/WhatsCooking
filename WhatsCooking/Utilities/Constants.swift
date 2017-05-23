@@ -26,7 +26,7 @@ struct Endpoints {
 }
 
 struct Keys {
-    static let kRegionKey = "kRegionKey"
+    static let kIsFirstLaunch = "kIsFirstLaunch"
 }
 
 var documentsDirectory : String {

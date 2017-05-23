@@ -37,6 +37,7 @@ class MealNetworkManager: NSObject {
                 (data, response, error) in
                 guard let _:Data = data, let _:URLResponse = response, error == nil else {
                     print("error: \(String(describing: error?.localizedDescription))")
+                    NotificationCenter.default.post(name: Notification.Name(rawValue: networkNotificationKey), object: error?.localizedDescription)
                     completion()
                     return
                 }
@@ -68,8 +69,7 @@ class MealNetworkManager: NSObject {
 
             let task = session.dataTask(with: request) {
                 (data, response, error) in
-                guard let _:Data = data, let _:URLResponse = response, error == nil else {
-                    print("error")
+                guard let _:Data = data, let _:URLResponse = response, error == nil else {                    
                     completion(nil)
                     return
                 }
@@ -92,7 +92,6 @@ class MealNetworkManager: NSObject {
     private class func parse(json: Any, completion: @escaping ([Meal]?) -> Void) {
         if let dict = json as? [String: Any],
             let mealsDictArray = dict["meals"] as? [[String: Any]] {
-            MealDataManager.deleteAllMeals()
             var meals = [Meal]()
             var thumbnails = [MealImage]()
             for mealsDict in mealsDictArray {
@@ -120,9 +119,6 @@ class MealNetworkManager: NSObject {
                             }
                         })
                     }
-
-
-
                 } else {
                     completion(nil)
                 }

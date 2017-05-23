@@ -20,6 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
             self.persistentContainer = container
             CoreDataManager.shared.managedObjectContext = container.viewContext
         }
+
+        UserDefaults.standard.set(true, forKey: Keys.kIsFirstLaunch)
+
         return true
     }
 

@@ -9,6 +9,8 @@
 import UIKit
 import CoreData
 
+let networkNotificationKey = "com.udacity.networkNotAvailableKey"
+
 class HomeViewController: UIViewController, SegueHandler {
 
     @IBOutlet weak var featuredTitle: UILabel!
@@ -23,38 +25,82 @@ class HomeViewController: UIViewController, SegueHandler {
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.delegate = self
-        populateMeals()
+        populateMeals(force: false)
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(self.showAlert),
+            name: Notification.Name(rawValue: networkNotificationKey),
+            object: nil)
     }
 
-    func populateMeals () {
-        MealNetworkManager.getRandomMeals {
+    func showAlert (notification: Notification) {
+        DispatchQueue.main.async {
+            let alertAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            AlertManager.showAlert(message: "The Internet connection appears to be offline. Please try again when connection resumes.", title: "Error!", in: self.navigationController!, with: [alertAction])
+        }
+    }
+
+    func populateMeals (force: Bool) {
+        let isFirstTime = UserDefaults.standard.bool(forKey: Keys.kIsFirstLaunch)
+        if isFirstTime && force {
+            MealNetworkManager.getRandomMeals {
+                DispatchQueue.main.async {
+                    self.setupCollectionView()
+                }
+            }
+            UserDefaults.standard.set(false, forKey: Keys.kIsFirstLaunch)
+        } else {
             DispatchQueue.main.async {
                 self.setupCollectionView()
             }
         }
-        MealNetworkManager.getFeaturedMeal {meals in
-            if let meal = meals?.first {
-                DispatchQueue.main.async {
-
-                    if let imgData = meal.thumbnail,
-                        let image = UIImage(data: imgData) {
-                        self.topBannerImage.image =  image
-                    } else {
-                        self.topBannerImage.imageURL = URL(string: meal.thumbURL)!
-                    }
-                    self.featuredMeal = meal
-                    self.featuredTitle.text = meal.title
-                    self.featuredTitle.sizeToFit()
-                }
-            }
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.0) {
+            self.getFeaturedMeal(force: force)
         }
     }
 
-    override func motionBegan(_ motion: UIEventSubtype, with event: UIEvent?) {
-        DispatchQueue.main.async {
-            MealDataManager.deleteAllMeals()
+    func getFeaturedMeal(force: Bool) {
+        if force {
+            MealNetworkManager.getFeaturedMeal {meals in
+                if let meal = meals?.first {
+                    self.displayFeaturedMeal(meal: meal)
+                } else {
+                    MealDataManager.fetchRandomMeal(completion: { (meal) in
+                        self.displayFeaturedMeal(meal: meal)
+                    })
+                }
+            }
+        } else {
+            MealDataManager.fetchRandomMeal(completion: { (meal) in
+                displayFeaturedMeal(meal: meal)
+            })
         }
-        populateMeals()
+    }
+
+    func displayFeaturedMeal(meal: Meal?) {
+        if let meal = meal {
+            DispatchQueue.main.async {
+                if let imgData = meal.thumbnail,
+                    let image = UIImage(data: imgData) {
+                    self.topBannerImage.image =  image
+                } else {
+                    self.topBannerImage.imageURL = URL(string: meal.thumbURL)!
+                }
+                self.featuredMeal = meal
+                self.featuredTitle.text = meal.title
+                self.featuredTitle.sizeToFit()
+            }
+        } else {
+            getFeaturedMeal(force: true)
+        }
+
+    }
+
+    @IBAction func refreshMeals(_ sender: Any) {
+        populateMeals(force: true)
+    }
+    override func motionBegan(_ motion: UIEventSubtype, with event: UIEvent?) {
+        populateMeals(force: true)
     }
 
     
@@ -83,7 +129,6 @@ class HomeViewController: UIViewController, SegueHandler {
         let managedObjectContext = CoreDataManager.shared.managedObjectContext
         let request = Meal.sortedFetchRequest
         request.returnsObjectsAsFaults = false
-        request.fetchBatchSize = 10
         let frc = NSFetchedResultsController(fetchRequest: request, managedObjectContext: managedObjectContext!, sectionNameKeyPath: nil, cacheName: nil)
         guard let cv = collectionView else { fatalError("must have collection view") }
         dataSource = CollectionViewDataSource(collectionView: cv, cellIdentifier: "mealCell", fetchedResultsController: frc, delegate: self)

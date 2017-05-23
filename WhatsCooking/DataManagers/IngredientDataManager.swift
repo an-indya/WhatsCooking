@@ -19,6 +19,10 @@ final class IngredientDataManager {
         }
     }
 
+    class func updateIngredient(ingredient: Ingredient) {
+        Ingredient.update(ingredient: ingredient)
+    }
+
     class func deleteAllIngredients () {
         if let managedObjectContext = CoreDataManager.shared.managedObjectContext {
             managedObjectContext.performChanges {

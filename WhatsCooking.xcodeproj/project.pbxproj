@@ -30,6 +30,7 @@
 		C7A961B01ED38D8F003599C5 /* MealCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A961AC1ED38D8F003599C5 /* MealCollectionViewCell.swift */; };
 		C7A961B51ED38DD3003599C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A961B21ED38DD3003599C5 /* AppDelegate.swift */; };
 		C7A961B61ED38DD3003599C5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A961B41ED38DD3003599C5 /* Constants.swift */; };
+		C7A961BA1ED3F6FE003599C5 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A961B91ED3F6FE003599C5 /* AlertManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		C7A961AC1ED38D8F003599C5 /* MealCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealCollectionViewCell.swift; sourceTree = "<group>"; };
 		C7A961B21ED38DD3003599C5 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C7A961B41ED38DD3003599C5 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		C7A961B91ED3F6FE003599C5 /* AlertManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 		C7645F5C1ECE9D51003F6018 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				C7A961B91ED3F6FE003599C5 /* AlertManager.swift */,
 				C7645F621ED14933003F6018 /* CoreDataManager.swift */,
 				C7645F5D1ECE9D63003F6018 /* NetworkManager.swift */,
 				C7645F641ED1493C003F6018 /* SegueHandler.swift */,
@@ -288,6 +291,7 @@
 				C7A961AE1ED38D8F003599C5 /* IngredientsTableViewCell.swift in Sources */,
 				C7A9619F1ED336F9003599C5 /* AsyncImageView.m in Sources */,
 				C7645F651ED1493C003F6018 /* SegueHandler.swift in Sources */,
+				C7A961BA1ED3F6FE003599C5 /* AlertManager.swift in Sources */,
 				C7A961A71ED35D41003599C5 /* IngredientDataManager.swift in Sources */,
 				C7A961961ED2B768003599C5 /* CollectionViewDataSource.swift in Sources */,
 				C7A961AD1ED38D8F003599C5 /* BannerTableViewCell.swift in Sources */,

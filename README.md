@@ -7,8 +7,7 @@ The app, when launched, pulls in 10 random recipes from http://www.themealdb.com
 ### Meal Browser screen
 
 1. This is the first screen the user views when launching the app.
-2. Shows a featured meal at the top. Tapping on "Get Recipe" button shows the recipe details
-  2.1 When internet connection is not available, the app shows a random recipe as featured from the already downloaded meal
+2. Shows a featured meal at the top. Tapping on "Get Recipe" button shows the recipe details. When internet connection is not available, the app shows a random recipe as featured from the already downloaded meal
 3. A collection of meals is displayed at the bottom. They are loaded from database unless this is the first launch
 4. The images of the meals, if available in database, are shown. Else they are loaded from the web
 5. If the user SHAKES the phone, more meals are downloaded

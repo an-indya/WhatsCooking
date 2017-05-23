@@ -33,7 +33,7 @@ class HomeViewController: UIViewController, SegueHandler {
             object: nil)
     }
 
-    func showAlert (notification: Notification) {
+    func showAlert () {
         DispatchQueue.main.async {
             let alertAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
             AlertManager.showAlert(message: "The Internet connection appears to be offline. Please try again when connection resumes.", title: "Error!", in: self.navigationController!, with: [alertAction])
@@ -42,13 +42,13 @@ class HomeViewController: UIViewController, SegueHandler {
 
     func populateMeals (force: Bool) {
         let isFirstTime = UserDefaults.standard.bool(forKey: Keys.kIsFirstLaunch)
-        if isFirstTime && force {
+        if isFirstTime || force {
             MealNetworkManager.getRandomMeals {
                 DispatchQueue.main.async {
                     self.setupCollectionView()
                 }
             }
-            UserDefaults.standard.set(false, forKey: Keys.kIsFirstLaunch)
+
         } else {
             DispatchQueue.main.async {
                 self.setupCollectionView()

@@ -45,6 +45,7 @@ class MealNetworkManager: NSObject {
                     let responseJson  = try JSONSerialization.jsonObject(with: data!, options: .allowFragments)
                         parse(json: responseJson, completion: { _ in
                             completion()
+                            UserDefaults.standard.set(false, forKey: Keys.kIsFirstLaunch)
                         })
                 } catch {
                     print("Error: \(error.localizedDescription)")

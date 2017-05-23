@@ -64,7 +64,7 @@ final class MealDataManager {
                     if meals.count > randomNumber {
                         completion(meals[randomNumber])
                     } else {
-                        completion(meals.first!)
+                        completion(meals.first ?? nil)
                     }
                 }
             } catch {

@@ -31,7 +31,26 @@
 		C7A961B51ED38DD3003599C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A961B21ED38DD3003599C5 /* AppDelegate.swift */; };
 		C7A961B61ED38DD3003599C5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A961B41ED38DD3003599C5 /* Constants.swift */; };
 		C7A961BA1ED3F6FE003599C5 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A961B91ED3F6FE003599C5 /* AlertManager.swift */; };
+		DEBA3183212DBB3300C4580F /* WhatsCookingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBA3182212DBB3300C4580F /* WhatsCookingTests.swift */; };
+		DEBA3191212DBB4600C4580F /* WhatsCookingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBA3190212DBB4600C4580F /* WhatsCookingUITests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DEBA3185212DBB3300C4580F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C7645F2F1ECBF364003F6018 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C7645F361ECBF364003F6018;
+			remoteInfo = WhatsCooking;
+		};
+		DEBA3193212DBB4600C4580F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C7645F2F1ECBF364003F6018 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C7645F361ECBF364003F6018;
+			remoteInfo = WhatsCooking;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		C7645F371ECBF364003F6018 /* WhatsCooking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatsCooking.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,10 +81,30 @@
 		C7A961B21ED38DD3003599C5 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C7A961B41ED38DD3003599C5 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C7A961B91ED3F6FE003599C5 /* AlertManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
+		DEBA3180212DBB3300C4580F /* WhatsCookingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhatsCookingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DEBA3182212DBB3300C4580F /* WhatsCookingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsCookingTests.swift; sourceTree = "<group>"; };
+		DEBA3184212DBB3300C4580F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DEBA318E212DBB4600C4580F /* WhatsCookingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhatsCookingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DEBA3190212DBB4600C4580F /* WhatsCookingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsCookingUITests.swift; sourceTree = "<group>"; };
+		DEBA3192212DBB4600C4580F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		C7645F341ECBF364003F6018 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DEBA317D212DBB3300C4580F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DEBA318B212DBB4600C4580F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -79,6 +118,8 @@
 			isa = PBXGroup;
 			children = (
 				C7645F391ECBF364003F6018 /* WhatsCooking */,
+				DEBA3181212DBB3300C4580F /* WhatsCookingTests */,
+				DEBA318F212DBB4600C4580F /* WhatsCookingUITests */,
 				C7645F381ECBF364003F6018 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -87,6 +128,8 @@
 			isa = PBXGroup;
 			children = (
 				C7645F371ECBF364003F6018 /* WhatsCooking.app */,
+				DEBA3180212DBB3300C4580F /* WhatsCookingTests.xctest */,
+				DEBA318E212DBB4600C4580F /* WhatsCookingUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -205,6 +248,24 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		DEBA3181212DBB3300C4580F /* WhatsCookingTests */ = {
+			isa = PBXGroup;
+			children = (
+				DEBA3182212DBB3300C4580F /* WhatsCookingTests.swift */,
+				DEBA3184212DBB3300C4580F /* Info.plist */,
+			);
+			path = WhatsCookingTests;
+			sourceTree = "<group>";
+		};
+		DEBA318F212DBB4600C4580F /* WhatsCookingUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DEBA3190212DBB4600C4580F /* WhatsCookingUITests.swift */,
+				DEBA3192212DBB4600C4580F /* Info.plist */,
+			);
+			path = WhatsCookingUITests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -225,13 +286,49 @@
 			productReference = C7645F371ECBF364003F6018 /* WhatsCooking.app */;
 			productType = "com.apple.product-type.application";
 		};
+		DEBA317F212DBB3300C4580F /* WhatsCookingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DEBA3189212DBB3300C4580F /* Build configuration list for PBXNativeTarget "WhatsCookingTests" */;
+			buildPhases = (
+				DEBA317C212DBB3300C4580F /* Sources */,
+				DEBA317D212DBB3300C4580F /* Frameworks */,
+				DEBA317E212DBB3300C4580F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DEBA3186212DBB3300C4580F /* PBXTargetDependency */,
+			);
+			name = WhatsCookingTests;
+			productName = WhatsCookingTests;
+			productReference = DEBA3180212DBB3300C4580F /* WhatsCookingTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DEBA318D212DBB4600C4580F /* WhatsCookingUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DEBA3195212DBB4600C4580F /* Build configuration list for PBXNativeTarget "WhatsCookingUITests" */;
+			buildPhases = (
+				DEBA318A212DBB4600C4580F /* Sources */,
+				DEBA318B212DBB4600C4580F /* Frameworks */,
+				DEBA318C212DBB4600C4580F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DEBA3194212DBB4600C4580F /* PBXTargetDependency */,
+			);
+			name = WhatsCookingUITests;
+			productName = WhatsCookingUITests;
+			productReference = DEBA318E212DBB4600C4580F /* WhatsCookingUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		C7645F2F1ECBF364003F6018 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0830;
+				LastSwiftUpdateCheck = 0940;
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = Udacity;
 				TargetAttributes = {
@@ -240,6 +337,18 @@
 						DevelopmentTeam = 599BY8F53P;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
+					};
+					DEBA317F212DBB3300C4580F = {
+						CreatedOnToolsVersion = 9.4.1;
+						DevelopmentTeam = 6PFL47955V;
+						ProvisioningStyle = Automatic;
+						TestTargetID = C7645F361ECBF364003F6018;
+					};
+					DEBA318D212DBB4600C4580F = {
+						CreatedOnToolsVersion = 9.4.1;
+						DevelopmentTeam = 6PFL47955V;
+						ProvisioningStyle = Automatic;
+						TestTargetID = C7645F361ECBF364003F6018;
 					};
 				};
 			};
@@ -257,6 +366,8 @@
 			projectRoot = "";
 			targets = (
 				C7645F361ECBF364003F6018 /* WhatsCooking */,
+				DEBA317F212DBB3300C4580F /* WhatsCookingTests */,
+				DEBA318D212DBB4600C4580F /* WhatsCookingUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -269,6 +380,20 @@
 				C7645F471ECBF364003F6018 /* LaunchScreen.storyboard in Resources */,
 				C7645F441ECBF364003F6018 /* Assets.xcassets in Resources */,
 				C7645F421ECBF364003F6018 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DEBA317E212DBB3300C4580F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DEBA318C212DBB4600C4580F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,7 +428,36 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DEBA317C212DBB3300C4580F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEBA3183212DBB3300C4580F /* WhatsCookingTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DEBA318A212DBB4600C4580F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEBA3191212DBB4600C4580F /* WhatsCookingUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DEBA3186212DBB3300C4580F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C7645F361ECBF364003F6018 /* WhatsCooking */;
+			targetProxy = DEBA3185212DBB3300C4580F /* PBXContainerItemProxy */;
+		};
+		DEBA3194212DBB4600C4580F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C7645F361ECBF364003F6018 /* WhatsCooking */;
+			targetProxy = DEBA3193212DBB4600C4580F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		C7645F401ECBF364003F6018 /* Main.storyboard */ = {
@@ -449,6 +603,124 @@
 			};
 			name = Release;
 		};
+		DEBA3187212DBB3300C4580F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6PFL47955V;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = WhatsCookingTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mandyduvall.WhatsCookingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WhatsCooking.app/WhatsCooking";
+			};
+			name = Debug;
+		};
+		DEBA3188212DBB3300C4580F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6PFL47955V;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = WhatsCookingTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mandyduvall.WhatsCookingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WhatsCooking.app/WhatsCooking";
+			};
+			name = Release;
+		};
+		DEBA3196212DBB4600C4580F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6PFL47955V;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = WhatsCookingUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mandyduvall.WhatsCookingUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = WhatsCooking;
+			};
+			name = Debug;
+		};
+		DEBA3197212DBB4600C4580F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6PFL47955V;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = WhatsCookingUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mandyduvall.WhatsCookingUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = WhatsCooking;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -466,6 +738,24 @@
 			buildConfigurations = (
 				C7645F4C1ECBF364003F6018 /* Debug */,
 				C7645F4D1ECBF364003F6018 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DEBA3189212DBB3300C4580F /* Build configuration list for PBXNativeTarget "WhatsCookingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DEBA3187212DBB3300C4580F /* Debug */,
+				DEBA3188212DBB3300C4580F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DEBA3195212DBB4600C4580F /* Build configuration list for PBXNativeTarget "WhatsCookingUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DEBA3196212DBB4600C4580F /* Debug */,
+				DEBA3197212DBB4600C4580F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
